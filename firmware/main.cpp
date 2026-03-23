@@ -1,8 +1,5 @@
 #include <Arduino.h>
 #include <Wire.h>
-
-#define LED PC7
-
 #include "HPDL1414.h"
 #include "HPDL1414Scroll.h"
 
@@ -10,21 +7,55 @@
 #define MAX_MESSAGE_SIZE 256
 #define MIN_INTERVAL 5
 #define MAX_INTERVAL 500
-// SDA=PC1, SDA=PC2
 
-const byte dataPins[7] = { PC0, PA2, PA1, PD7, PC7, PD4, PD5 }; // Segment data pins: D0 - D6
-const byte addrPins[2] = { PC3, PC4 };                          // Segment address pins: A0, A1
-const byte wrenPins[] = { PD6, PC6 };                           // Write Enable pins (left to right)
+// SDA=PC1, SDA=PC2
+const byte dataPins[7] = {PC0, PA2, PA1, PD7, PC7, PD4, PD5}; // Segment data pins: D0 - D6
+const byte addrPins[2] = {PC3, PC4};                          // Segment address pins: A0, A1
+const byte wrenPins[] = {PD6, PC6};                           // Write Enable pins (left to right)
 
 volatile bool display = true;
-volatile uint8_t interval = 0xFF;
-//HPDL1414 hpdl(dataPins, addrPins, wrenPins, sizeof(wrenPins));
-HPDL1414Scroll hpdl(dataPins, addrPins, wrenPins, sizeof(wrenPins));
-String ping = "PING";
-String pong = "PONG";
+volatile uint16_t interval = 300;
+HPDL1414 hpdl(dataPins, addrPins, wrenPins, sizeof(wrenPins));
 
-int len;
-int stop;
+static char messageBuffer[MAX_MESSAGE_SIZE];
+static uint16_t messageLength = 0;
+static int16_t scrollPos = 0;
+static uint32_t lastScroll = 0;
+
+void setMessage(const char *newMessage)
+{
+  int displayWidth = hpdl.segments() * 4;
+  int pad = displayWidth;
+  int maxCopy = MAX_MESSAGE_SIZE - (2 * pad) - 1;
+  int msgLen = strnlen(newMessage, maxCopy);
+
+  int index = 0;
+
+  // prepend spaces
+  for (int i = 0; i < pad && index < MAX_MESSAGE_SIZE - 1; i++)
+  {
+    messageBuffer[index++] = ' ';
+  }
+
+  // copy message
+  for (int i = 0; i < msgLen && index < MAX_MESSAGE_SIZE - 1; i++)
+  {
+    messageBuffer[index++] = newMessage[i];
+  }
+
+  // reset after clearing original message
+  messageLength = index;
+
+  // append spaces
+  for (int i = 0; i < pad && index < MAX_MESSAGE_SIZE - 1; i++)
+  {
+    messageBuffer[index++] = ' ';
+  }
+
+  messageBuffer[index] = '\0';
+
+  scrollPos = 0;
+}
 
 void handleOnReceive(int bytesReceived)
 {
@@ -65,7 +96,7 @@ void handleOnReceive(int bytesReceived)
         buffer[--bufferIndex] = '\0';
       }
 
-      //setMessage(buffer);
+      setMessage(buffer);
       bufferIndex = 0;
     }
   }
@@ -77,19 +108,10 @@ void handleOnReceive(int bytesReceived)
   }
 }
 
-// void scrollTextSetMessage(const char *newMessage)
-// {
-//   strncpy(scrollMessage, newMessage, MAX_MESSAGE_SIZE - 1);
-//   scrollMessage[MAX_MESSAGE_SIZE - 1] = '\0';
-//   scrollMessageWidth = getTextWidth(scrollMessage);
-//   scrollMessageX = MATRIX_WIDTH;
-// }
-
 void setup()
 {
   if (!hpdl.begin())
   {
-    // Serial.println("Can't allocate buffer memory!");
     while (true)
       ;
   }
@@ -97,50 +119,23 @@ void setup()
   Wire.begin(I2C_ADDRESS);
   Wire.onReceive(handleOnReceive);
 
-  len = ping.length();
-  stop = (hpdl.segments() * 4) - len;
+  setMessage("Once upon a midnight dreary...");
 }
 
 void loop()
 {
-  hpdl.clear();
-  hpdl.print("12345678");
-  hpdl.display();
-  delay(5000);
+  if (!display)
+    return;
 
-  hpdl.clear();
-  hpdl.print("abcdefgh");
-  hpdl.display();
-  delay(5000);
+  uint32_t now = millis();
 
-  hpdl.clear();
-  hpdl.print("ABCDEFGH");
-  hpdl.display();
-  delay(5000);
+  if (now - lastScroll >= interval)
+  {
+    lastScroll = now;
 
-  // // First character on the display
-  // hpdl.setCursor(0);
-  // hpdl.print(ping);
-  // hpdl.display();
+    hpdl.clear();
+    hpdl.print(messageBuffer + scrollPos);
 
-  // while (hpdl.getCursor() < stop)
-  // {
-  //   hpdl.scrollToRight();
-  //   hpdl.display();
-  //   delay(500);
-  // }
-
-  // // Clear again
-  // hpdl.clear();
-  // // Begin printing on stop-th character on the display
-  // hpdl.setCursor(stop);
-  // hpdl.print(pong);
-  // hpdl.display();
-
-  // while (hpdl.getCursor() > 0)
-  // {
-  //   hpdl.scrollToLeft();
-  //   hpdl.display();
-  //   delay(500);
-  // }
+    scrollPos = (scrollPos + 1) % messageLength;
+  }
 }
