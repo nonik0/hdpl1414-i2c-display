@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "HPDL-1414")(type "KiCad")(uri "${KIPRJMOD}/HPDL-1414.pretty")(options "")(descr ""))
+)
