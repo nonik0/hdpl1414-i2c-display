@@ -1,12 +1,11 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include "HPDL1414.h"
-#include "HPDL1414Scroll.h"
 
 #define I2C_ADDRESS 0x15
 #define MAX_MESSAGE_SIZE 256
-#define MIN_INTERVAL 5
-#define MAX_INTERVAL 500
+#define MIN_INTERVAL 50
+#define MAX_INTERVAL 1000
 
 // SDA=PC1, SDA=PC2
 const byte dataPins[7] = {PC0, PA2, PA1, PD7, PC7, PD4, PD5}; // Segment data pins: D0 - D6
@@ -124,18 +123,15 @@ void setup()
 
 void loop()
 {
-  if (!display)
-    return;
-
-  uint32_t now = millis();
-
-  if (now - lastScroll >= interval)
+  if (millis() - lastScroll >= interval)
   {
-    lastScroll = now;
-
+    lastScroll = millis();
     hpdl.clear();
-    hpdl.print(messageBuffer + scrollPos);
 
+    if (!display)
+      return;
+
+    hpdl.print(messageBuffer + scrollPos);
     scrollPos = (scrollPos + 1) % messageLength;
   }
 }
