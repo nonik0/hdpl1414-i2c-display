@@ -1418,6 +1418,163 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "HPDL-1414:SWDIO_3_PIN_ALT"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J4"
+				(at -11.43 -5.588 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "3 Pin"
+				(at -11.43 -8.128 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "HPDL-1414:Pads_1x3_2.54mm"
+				(at -6.35 -1.27 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 -9.398 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0.508 -6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "AVR UPDI Connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "IDC?Header*2x03* Pin?Header*2x03*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SWDIO_3_PIN_ALT_0_1"
+				(rectangle
+					(start -3.81 5.08)
+					(end 3.81 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "SWDIO_3_PIN_ALT_1_1"
+				(pin passive line
+					(at -6.35 2.54 0)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -6.35 0 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -6.35 -2.54 0)
+					(length 2.54)
+					(name "DATA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "MCU_WCH_RiscV:CH32V003AxMx"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2476,23 +2633,13 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 82.55) (xy 105.41 82.55)
+			(xy 93.98 80.01) (xy 105.41 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2242b151-d863-49ee-b920-0ab96988f299")
-	)
-	(wire
-		(pts
-			(xy 66.04 82.55) (xy 76.2 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "29014d65-8b0d-4980-bebf-725c0287c935")
+		(uuid "23e06042-41ed-4344-b4a4-715113f2819e")
 	)
 	(wire
 		(pts
@@ -2506,13 +2653,13 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 82.55) (xy 66.04 83.82)
+			(xy 66.04 80.01) (xy 76.2 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5101bc0f-491f-4fa1-ad30-e22e7287e303")
+		(uuid "58864f1f-0624-4a1f-82ad-d4af0429b64a")
 	)
 	(wire
 		(pts
@@ -2523,16 +2670,6 @@
 			(type default)
 		)
 		(uuid "5ca2edef-2c60-4882-8a39-00a0d7ef02c4")
-	)
-	(wire
-		(pts
-			(xy 66.04 80.01) (xy 76.2 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6bb73859-7acf-4c97-b34d-84dd3e69292b")
 	)
 	(wire
 		(pts
@@ -2566,13 +2703,33 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 82.55) (xy 93.98 83.82)
+			(xy 66.04 77.47) (xy 76.2 77.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "94cafe81-55c4-421b-ab33-a3cc29a462c6")
+		(uuid "8ec6a800-10ee-4379-b034-abca2bee5aff")
+	)
+	(wire
+		(pts
+			(xy 93.98 82.55) (xy 105.41 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a620a72a-5e1c-4e6a-95bd-fa3d4f18bac2")
+	)
+	(wire
+		(pts
+			(xy 93.98 78.74) (xy 93.98 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af678b37-b1a6-45c0-8651-f5745caabf5d")
 	)
 	(wire
 		(pts
@@ -2583,26 +2740,6 @@
 			(type default)
 		)
 		(uuid "c1dae75f-3c34-4f8a-ba17-db0714b29a1b")
-	)
-	(wire
-		(pts
-			(xy 93.98 78.74) (xy 93.98 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c6626b18-2639-4fa5-a947-9c716d0314ed")
-	)
-	(wire
-		(pts
-			(xy 93.98 80.01) (xy 105.41 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d525144a-7700-40ce-91b7-0ba6405bdc6d")
 	)
 	(wire
 		(pts
@@ -2626,6 +2763,16 @@
 	)
 	(wire
 		(pts
+			(xy 66.04 76.2) (xy 66.04 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db9a8b67-45b8-4b03-bfdd-7784071ddbf1")
+	)
+	(wire
+		(pts
 			(xy 29.21 83.82) (xy 20.32 83.82)
 		)
 		(stroke
@@ -2636,13 +2783,23 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 78.74) (xy 66.04 80.01)
+			(xy 93.98 82.55) (xy 93.98 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fc54a8ee-acaa-45ca-a04d-d63bcabe91a0")
+		(uuid "f858cb27-f27e-4f4f-82d0-191b1add6352")
+	)
+	(wire
+		(pts
+			(xy 66.04 80.01) (xy 66.04 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc5dfd55-8e37-4507-98f4-adf8b97d9923")
 	)
 	(global_label "D4"
 		(shape input)
@@ -2980,30 +3137,6 @@
 			)
 		)
 	)
-	(global_label "SWDIO"
-		(shape input)
-		(at 76.2 77.47 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "4e4a2fb2-27c5-4060-b5bd-635dfc9bdfa7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 67.3486 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "A0"
 		(shape input)
 		(at 68.58 39.37 180)
@@ -3089,30 +3222,6 @@
 		(uuid "6d33e5fd-a11a-4732-a08c-e23f3a1697c0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 21.3867 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "D3{slash}RST"
-		(shape input)
-		(at 105.41 77.47 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6ebca886-18c2-42d8-a4f1-0ffe0cf8c3a3")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 95.1677 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3268,6 +3377,30 @@
 			)
 		)
 	)
+	(global_label "SWDIO"
+		(shape input)
+		(at 76.2 82.55 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a0e80392-1631-4c25-8ae5-9b6dd8ea5922")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 67.3486 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "D2"
 		(shape input)
 		(at 85.09 29.21 90)
@@ -3305,6 +3438,30 @@
 		(uuid "b3e73280-178b-4da6-a44a-f54ea2b15a04")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 17.2139 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "D3{slash}RST"
+		(shape input)
+		(at 105.41 77.47 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b9ce7361-ff43-4cda-a4df-80d971b7a509")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 95.1677 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3601,83 +3758,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 93.98 83.82 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "019860f2-5698-42f2-8314-bdba6e006133")
-		(property "Reference" "#PWR018"
-			(at 93.98 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 91.694 83.82 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 93.98 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 93.98 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 93.98 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1a4c507a-7a94-4a05-87ab-85dcc29d7ecd")
-		)
-		(instances
-			(project "HPDL1414-Display"
-				(path "/ad64bdbc-9197-466d-b18b-a9c4918c0b17"
-					(reference "#PWR018")
-					(unit 1)
-				)
 			)
 		)
 	)
@@ -4226,8 +4306,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 66.04 83.82 0)
+		(lib_id "power:+3V3")
+		(at 66.04 76.2 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4235,9 +4315,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "5a32dca7-0fe6-4daa-afc4-c2ebeab9cdcb")
-		(property "Reference" "#PWR04"
-			(at 66.04 90.17 0)
+		(uuid "64ccf71b-5db6-4ec8-bc87-f8d645bfb18a")
+		(property "Reference" "#PWR03"
+			(at 66.04 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4247,18 +4327,19 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 63.754 83.82 0)
+		(property "Value" "VCC"
+			(at 61.722 76.454 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 66.04 83.82 0)
+			(at 66.04 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4269,7 +4350,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 66.04 83.82 0)
+			(at 66.04 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4279,8 +4360,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 66.04 83.82 0)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 66.04 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4291,7 +4372,84 @@
 			)
 		)
 		(pin "1"
-			(uuid "6e79239a-6a3f-4813-9fcf-a5b7d3dcaa11")
+			(uuid "3df52713-19db-4909-a8c9-2e3cd13b378d")
+		)
+		(instances
+			(project "HPDL1414-Display"
+				(path "/ad64bdbc-9197-466d-b18b-a9c4918c0b17"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 66.04 81.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6de0c137-5e84-4841-8ef6-de93e2b21ce1")
+		(property "Reference" "#PWR04"
+			(at 66.04 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 63.754 81.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.04 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 66.04 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bc833e81-d5d5-466d-9971-93ebd1bad1f3")
 		)
 		(instances
 			(project "HPDL1414-Display"
@@ -4457,7 +4615,7 @@
 		)
 	)
 	(symbol
-		(lib_id "HPDL-1414:SWDIO_3_PIN")
+		(lib_id "HPDL-1414:SWDIO_3_PIN_ALT")
 		(at 82.55 80.01 0)
 		(unit 1)
 		(body_style 1)
@@ -4618,84 +4776,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 93.98 78.74 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "83a12fbb-995d-4c6c-8659-c0a26f859544")
-		(property "Reference" "#PWR017"
-			(at 93.98 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VCC"
-			(at 89.662 78.994 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 93.98 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 93.98 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 93.98 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f6386dc1-16a4-4795-9f84-d65f70462025")
-		)
-		(instances
-			(project "HPDL1414-Display"
-				(path "/ad64bdbc-9197-466d-b18b-a9c4918c0b17"
-					(reference "#PWR017")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mechanical:MountingHole")
 		(at 132.08 81.28 0)
 		(unit 1)
@@ -4766,6 +4846,84 @@
 			(project "HPDL1414-Display"
 				(path "/ad64bdbc-9197-466d-b18b-a9c4918c0b17"
 					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 93.98 78.74 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9830e24e-894d-4d57-9790-f56e9bf41d48")
+		(property "Reference" "#PWR017"
+			(at 93.98 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 89.662 78.994 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 93.98 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.98 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 93.98 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4a40a209-b75b-4b08-80f4-06529838f308")
+		)
+		(instances
+			(project "HPDL1414-Display"
+				(path "/ad64bdbc-9197-466d-b18b-a9c4918c0b17"
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -5249,84 +5407,6 @@
 	)
 	(symbol
 		(lib_id "power:+3V3")
-		(at 66.04 78.74 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "b8c1bf0e-1089-4198-b441-e52f8b61e6ab")
-		(property "Reference" "#PWR03"
-			(at 66.04 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VCC"
-			(at 61.722 78.994 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 66.04 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 66.04 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 66.04 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "dfe6db8c-308b-4810-873b-80d6061a8795")
-		)
-		(instances
-			(project "HPDL1414-Display"
-				(path "/ad64bdbc-9197-466d-b18b-a9c4918c0b17"
-					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
 		(at 88.9 54.61 180)
 		(unit 1)
 		(body_style 1)
@@ -5435,7 +5515,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "HPDL-1414:Pads_1x3_2.54mm"
+		(property "Footprint" "NONIK0:Pads_1x3_2.54mm"
 			(at 105.41 81.28 90)
 			(hide yes)
 			(show_name no)
@@ -5446,7 +5526,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.microchip.com/webdoc/GUID-9D10622A-5C16-4405-B092-1BDD437B4976/index.html?GUID-9B349315-2842-4189-B88C-49F4E1055D7F"
 			(at 116.84 89.408 0)
 			(hide yes)
 			(show_name no)
@@ -5457,7 +5537,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Atmel 3-pin UPDI connector"
 			(at 112.268 86.868 0)
 			(hide yes)
 			(show_name no)
@@ -5558,6 +5638,83 @@
 			(project "HPDL1414-Display"
 				(path "/ad64bdbc-9197-466d-b18b-a9c4918c0b17"
 					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 93.98 83.82 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d80074d1-b856-498e-941d-97a3626751fb")
+		(property "Reference" "#PWR018"
+			(at 93.98 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 91.694 83.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 93.98 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.98 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 93.98 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e71b18e2-d769-48c7-b885-8755a4b259e8")
+		)
+		(instances
+			(project "HPDL1414-Display"
+				(path "/ad64bdbc-9197-466d-b18b-a9c4918c0b17"
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
