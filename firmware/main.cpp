@@ -13,7 +13,7 @@ const byte addrPins[2] = {PC3, PC4};                          // Segment address
 const byte wrenPins[] = {PD6, PC6};                           // Write Enable pins (left to right)
 
 volatile bool display = true;
-volatile uint16_t interval = 300;
+volatile uint16_t interval = 150;
 HPDL1414 hpdl(dataPins, addrPins, wrenPins, sizeof(wrenPins));
 
 static char messageBuffer[MAX_MESSAGE_SIZE];
