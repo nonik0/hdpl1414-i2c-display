@@ -2,7 +2,7 @@
 #include <Wire.h>
 #include "HPDL1414.h"
 
-#define I2C_ADDRESS 0x15
+#define I2C_ADDRESS 0x14
 #define MAX_MESSAGE_SIZE 256
 #define MIN_INTERVAL 50
 #define MAX_INTERVAL 1000
