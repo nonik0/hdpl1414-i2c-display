@@ -13,11 +13,13 @@ const byte addrPins[2] = {PC3, PC4};                          // Segment address
 const byte wrenPins[] = {PD6, PC6};                           // Write Enable pins (left to right)
 
 volatile bool display = true;
+volatile bool scroll = true;
 volatile uint16_t interval = 150;
 HPDL1414 hpdl(dataPins, addrPins, wrenPins, sizeof(wrenPins));
 
 static char messageBuffer[MAX_MESSAGE_SIZE];
 static uint16_t messageLength = 0;
+static uint16_t messageStart = 0;
 static int16_t scrollPos = 0;
 static uint32_t lastScroll = 0;
 
@@ -35,6 +37,8 @@ void setMessage(const char *newMessage)
   {
     messageBuffer[index++] = ' ';
   }
+
+  messageStart = index; // offset of first real character
 
   // copy message
   for (int i = 0; i < msgLen && index < MAX_MESSAGE_SIZE - 1; i++)
@@ -105,6 +109,15 @@ void handleOnReceive(int bytesReceived)
     uint8_t scrollSpeed = Wire.read();
     interval = map(constrain(scrollSpeed, 0, 100), 100, 0, MIN_INTERVAL, MAX_INTERVAL);
   }
+  // setScrollMode
+  else if (command == 0x03)
+  {
+    scroll = Wire.read();
+    scrollPos = 0;
+  }
+  // showTempMessage
+  // else if (command == 0x04) {
+  // }
 }
 
 void setup()
@@ -131,7 +144,14 @@ void loop()
     if (!display)
       return;
 
-    hpdl.print(messageBuffer + scrollPos);
-    scrollPos = (scrollPos + 1) % messageLength;
+    if (scroll)
+    {
+      hpdl.print(messageBuffer + scrollPos);
+      scrollPos = (scrollPos + 1) % messageLength;
+    }
+    else
+    {
+      hpdl.print(messageBuffer + messageStart);
+    }
   }
 }
